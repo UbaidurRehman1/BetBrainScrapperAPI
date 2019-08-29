@@ -4,8 +4,13 @@
   <artifactId>Masenko_Project_BetBrainAPI</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+  	<properties>
+  		<maven.compiler.source>12</maven.compiler.source>
+		<maven.compiler.target>12</maven.compiler.target>
+  	</properties>
+  
+  
   	<dependencies>
-			
 		<dependency>
 		    <groupId>mysql</groupId>
 		    <artifactId>mysql-connector-java</artifactId>
@@ -17,37 +22,44 @@
     		<artifactId>log4j</artifactId>
     		<version>1.2.17</version>
 		</dependency>
-		
-		
 	</dependencies>
 	
 	<build>
+	
+		<finalName>BetBrainScrapperAPI_${project.version}</finalName>
+	
 		<plugins>
+
+			<!-- Plugin for assembly -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<artifactId>maven-assembly-plugin</artifactId>
 				<configuration>
-					<release>11</release>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
-				<executions>
-					<execution>
-						<goals>
-							<goal>java</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<mainClass>HelloFX</mainClass>
+					<archive>
+						<manifest>
+							<mainClass>com.ubaid.Masenko_Project_Betbrain_API_MainClass</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>single</goal>
+							</goals>
+						</execution>
+					</executions>
+					
+					<filename>
+						${project.build.finalName}
+					</filename>
+
+					<appendAssemblyId>true</appendAssemblyId>
+					
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-  
-  
+	  
 </project>

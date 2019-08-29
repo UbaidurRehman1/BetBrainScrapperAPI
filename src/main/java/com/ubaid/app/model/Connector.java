@@ -24,7 +24,7 @@ public class Connector implements Runnable
 		
 		SEPCConnector sepcPullConnector = new SEPCPushConnector("sept.betbrain.com", 7000);		
 		sepcPullConnector.addConnectorListener(new ConnecterListener(controller));
-		sepcPullConnector.start("Vilius");	
+		sepcPullConnector.start("Linas");	
 	}
 	
 	
