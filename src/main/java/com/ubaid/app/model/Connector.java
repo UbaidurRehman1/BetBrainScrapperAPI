@@ -22,7 +22,7 @@ public class Connector implements Runnable
 		controller.setInsertInToEvent(new InsertInToEvent(controller));
 		controller.setInsertInToLocation(new InsertInToLocation(controller));
 		
-		SEPCConnector sepcPullConnector = new SEPCPushConnector("sept.betbrain.com", 7000);		
+		SEPCConnector sepcPullConnector = new SEPCPushConnector("sept.oddsmatrix.com", 7000);		
 		sepcPullConnector.addConnectorListener(new ConnecterListener(controller));
 		sepcPullConnector.start("Linas");	
 	}
