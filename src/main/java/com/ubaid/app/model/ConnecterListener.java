@@ -45,7 +45,6 @@ public class ConnecterListener implements SEPCConnectorListener
 		}
 		catch (InterruptedException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

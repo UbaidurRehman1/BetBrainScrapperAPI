@@ -194,7 +194,6 @@ public class Controller
 		}
 		catch (InterruptedException e)
 		{
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		//initiating initiater class which do subprocesses
